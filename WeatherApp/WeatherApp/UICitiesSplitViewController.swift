@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  UICitiesSplitViewController.swift
 //  WeatherApp
 //
 //  Created by Cyrielle Gandon on 22/02/2016.
@@ -8,18 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
+class UICitiesSplitViewController: UISplitViewController
+{
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-
