@@ -48,6 +48,6 @@ class DAOWeatherRequest: DAORequest
 {
     func didReceiveData(data: NSData)
     {
-        <#code#>
+        
     }
 }
