@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -39,22 +40,35 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1qr-Sp-tzo">
-                                            <rect key="frame" x="0.0" y="0.0" width="44" height="43.5"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1qr-Sp-tzo">
+                                            <rect key="frame" x="8" y="0.0" width="44" height="43.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="flx-yV-z3w"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CityName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QX7-oc-wBB">
-                                            <rect key="frame" x="52" y="0.0" width="257" height="43.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CityName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QX7-oc-wBB">
+                                            <rect key="frame" x="57" y="8" width="75.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CityTemperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STN-Nm-Kre">
-                                            <rect key="frame" x="317" y="0.0" width="241" height="43.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CityTemperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STN-Nm-Kre">
+                                            <rect key="frame" x="137.5" y="0.0" width="127" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="QX7-oc-wBB" firstAttribute="top" secondItem="K3W-60-SGH" secondAttribute="topMargin" id="9QQ-8G-WaW"/>
+                                        <constraint firstItem="1qr-Sp-tzo" firstAttribute="leading" secondItem="K3W-60-SGH" secondAttribute="leadingMargin" id="GZG-O2-0cX"/>
+                                        <constraint firstItem="QX7-oc-wBB" firstAttribute="leading" secondItem="1qr-Sp-tzo" secondAttribute="trailing" constant="5" id="KSH-85-OZ0"/>
+                                        <constraint firstItem="STN-Nm-Kre" firstAttribute="leading" secondItem="QX7-oc-wBB" secondAttribute="trailing" constant="5" id="QKJ-ZT-ZIr"/>
+                                        <constraint firstItem="1qr-Sp-tzo" firstAttribute="centerY" secondItem="K3W-60-SGH" secondAttribute="centerY" id="VGa-4h-mXZ"/>
+                                        <constraint firstItem="1qr-Sp-tzo" firstAttribute="centerY" secondItem="K3W-60-SGH" secondAttribute="centerY" id="XST-uH-eOF"/>
+                                        <constraint firstItem="STN-Nm-Kre" firstAttribute="top" secondItem="K3W-60-SGH" secondAttribute="topMargin" constant="-8" id="Xs5-EZ-YEx"/>
+                                        <constraint firstItem="1qr-Sp-tzo" firstAttribute="top" secondItem="K3W-60-SGH" secondAttribute="topMargin" constant="-8" id="kDi-SX-kWn"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" identifier="cityCellIdentifier"/>
                                 <connections>
