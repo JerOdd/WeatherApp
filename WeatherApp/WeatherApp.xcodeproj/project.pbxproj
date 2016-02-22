@@ -99,13 +99,11 @@
 		F5F806E91C7B2D0A004A4596 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				F5F806EA1C7B2D0A004A4596 /* AppDelegate.swift */,
-				F5F806EC1C7B2D0A004A4596 /* ViewController.swift */,
-				F5F806EE1C7B2D0A004A4596 /* Main.storyboard */,
-				F5F806F41C7B2D0A004A4596 /* Assets.xcassets */,
-				F5F806F61C7B2D0A004A4596 /* LaunchScreen.storyboard */,
-				F5F806F91C7B2D0A004A4596 /* Info.plist */,
-				F5F806F11C7B2D0A004A4596 /* WeatherApp.xcdatamodeld */,
+				F5F8071B1C7B2DCE004A4596 /* 0 - Common */,
+				F5F8071C1C7B2DE7004A4596 /* 1 - DAO */,
+				F5F8071D1C7B2DF6004A4596 /* 2 - Business */,
+				F5F8071E1C7B2E02004A4596 /* 3 - UI */,
+				F5F8071F1C7B2E1F004A4596 /* 4 - Application */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -126,6 +124,72 @@
 				F5F8070F1C7B2D0A004A4596 /* Info.plist */,
 			);
 			path = WeatherAppUITests;
+			sourceTree = "<group>";
+		};
+		F5F8071B1C7B2DCE004A4596 /* 0 - Common */ = {
+			isa = PBXGroup;
+			children = (
+				F5F807221C7B2E9C004A4596 /* Domain */,
+			);
+			name = "0 - Common";
+			sourceTree = "<group>";
+		};
+		F5F8071C1C7B2DE7004A4596 /* 1 - DAO */ = {
+			isa = PBXGroup;
+			children = (
+				F5F807211C7B2E76004A4596 /* Request */,
+				F5F807201C7B2E6A004A4596 /* Storage */,
+			);
+			name = "1 - DAO";
+			sourceTree = "<group>";
+		};
+		F5F8071D1C7B2DF6004A4596 /* 2 - Business */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "2 - Business";
+			sourceTree = "<group>";
+		};
+		F5F8071E1C7B2E02004A4596 /* 3 - UI */ = {
+			isa = PBXGroup;
+			children = (
+				F5F806EC1C7B2D0A004A4596 /* ViewController.swift */,
+				F5F806EE1C7B2D0A004A4596 /* Main.storyboard */,
+				F5F806F61C7B2D0A004A4596 /* LaunchScreen.storyboard */,
+				F5F806F41C7B2D0A004A4596 /* Assets.xcassets */,
+			);
+			name = "3 - UI";
+			sourceTree = "<group>";
+		};
+		F5F8071F1C7B2E1F004A4596 /* 4 - Application */ = {
+			isa = PBXGroup;
+			children = (
+				F5F806F91C7B2D0A004A4596 /* Info.plist */,
+				F5F806EA1C7B2D0A004A4596 /* AppDelegate.swift */,
+			);
+			name = "4 - Application";
+			sourceTree = "<group>";
+		};
+		F5F807201C7B2E6A004A4596 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				F5F806F11C7B2D0A004A4596 /* WeatherApp.xcdatamodeld */,
+			);
+			name = Storage;
+			sourceTree = "<group>";
+		};
+		F5F807211C7B2E76004A4596 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
+		F5F807221C7B2E9C004A4596 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
