@@ -39,7 +39,7 @@ class UICitiesTableViewController: UITableViewController, BOWeatherManagerDelega
         let city : City = BOWeatherManager.sharedManager.cities[indexPath.row]
         
         cell.cityNameLabel.text = city.name as String
-        cell.cityTemperatureLabel.text = String(city.weather.temp)
+        cell.cityTemperatureLabel.text = "\(String(city.weather.temp))  °F"
         
         //TODO
         if indexPath.row <= weathersImages.count - 1
@@ -48,6 +48,11 @@ class UICitiesTableViewController: UITableViewController, BOWeatherManagerDelega
         }
 
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return 60
     }
     
     // MARK: - Table view delegate

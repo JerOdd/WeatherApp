@@ -18,17 +18,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p0v-r2-Mo2">
-                                <rect key="frame" x="180" y="20" width="240" height="232"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p0v-r2-Mo2">
+                                <rect key="frame" x="180" y="35" width="240" height="232"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="232" id="Rrg-Bj-wEl"/>
+                                    <constraint firstAttribute="width" constant="240" id="uFv-zM-cGu"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="weatherDescription" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wpp-Rh-Q3H">
-                                <rect key="frame" x="20" y="297" width="560" height="89"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="weatherDescription" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wpp-Rh-Q3H">
+                                <rect key="frame" x="225" y="312" width="149.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeH-L3-1Uk">
+                                <rect key="frame" x="238.5" y="516" width="123" height="30"/>
+                                <state key="normal" title="Add To Favourites"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p0v-r2-Mo2" firstAttribute="top" secondItem="Buj-Rz-Pt5" secondAttribute="bottom" constant="15" id="17R-3L-OgK"/>
+                            <constraint firstItem="p0v-r2-Mo2" firstAttribute="centerX" secondItem="Wpp-Rh-Q3H" secondAttribute="centerX" id="ZvJ-XR-v2D"/>
+                            <constraint firstItem="Wpp-Rh-Q3H" firstAttribute="top" secondItem="p0v-r2-Mo2" secondAttribute="bottom" constant="45" id="dy7-8M-Ztd"/>
+                            <constraint firstItem="Wpp-Rh-Q3H" firstAttribute="centerX" secondItem="SbO-tL-TsP" secondAttribute="centerX" id="gvb-oQ-qbi"/>
+                            <constraint firstItem="p0v-r2-Mo2" firstAttribute="centerX" secondItem="SbO-tL-TsP" secondAttribute="centerX" id="l1D-J1-twz"/>
+                            <constraint firstItem="ZeH-L3-1Uk" firstAttribute="centerX" secondItem="SbO-tL-TsP" secondAttribute="centerX" id="rSo-uA-4yj"/>
+                            <constraint firstItem="x3o-56-LeD" firstAttribute="top" secondItem="ZeH-L3-1Uk" secondAttribute="bottom" constant="5" id="v1k-dt-9Bu"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="weatherDescriptionLabel" destination="Wpp-Rh-Q3H" id="TPw-qH-i0F"/>
@@ -62,27 +79,26 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CityName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QX7-oc-wBB">
-                                            <rect key="frame" x="57" y="8" width="75.5" height="20.5"/>
+                                            <rect key="frame" x="262.5" y="11" width="75.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CityTemperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STN-Nm-Kre">
-                                            <rect key="frame" x="137.5" y="0.0" width="127" height="20.5"/>
+                                            <rect key="frame" x="460" y="11" width="127" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="QX7-oc-wBB" firstAttribute="top" secondItem="K3W-60-SGH" secondAttribute="topMargin" id="9QQ-8G-WaW"/>
+                                        <constraint firstItem="QX7-oc-wBB" firstAttribute="centerX" secondItem="K3W-60-SGH" secondAttribute="centerX" id="375-Pa-yrR"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="STN-Nm-Kre" secondAttribute="trailing" constant="5" id="41p-Y1-eQo"/>
                                         <constraint firstItem="1qr-Sp-tzo" firstAttribute="leading" secondItem="K3W-60-SGH" secondAttribute="leadingMargin" id="GZG-O2-0cX"/>
-                                        <constraint firstItem="QX7-oc-wBB" firstAttribute="leading" secondItem="1qr-Sp-tzo" secondAttribute="trailing" constant="5" id="KSH-85-OZ0"/>
-                                        <constraint firstItem="STN-Nm-Kre" firstAttribute="leading" secondItem="QX7-oc-wBB" secondAttribute="trailing" constant="5" id="QKJ-ZT-ZIr"/>
-                                        <constraint firstItem="1qr-Sp-tzo" firstAttribute="centerY" secondItem="K3W-60-SGH" secondAttribute="centerY" id="VGa-4h-mXZ"/>
+                                        <constraint firstItem="STN-Nm-Kre" firstAttribute="centerY" secondItem="K3W-60-SGH" secondAttribute="centerY" id="QXL-yx-UJS"/>
                                         <constraint firstItem="1qr-Sp-tzo" firstAttribute="centerY" secondItem="K3W-60-SGH" secondAttribute="centerY" id="XST-uH-eOF"/>
-                                        <constraint firstItem="STN-Nm-Kre" firstAttribute="top" secondItem="K3W-60-SGH" secondAttribute="topMargin" constant="-8" id="Xs5-EZ-YEx"/>
                                         <constraint firstItem="1qr-Sp-tzo" firstAttribute="top" secondItem="K3W-60-SGH" secondAttribute="topMargin" constant="-8" id="kDi-SX-kWn"/>
+                                        <constraint firstItem="QX7-oc-wBB" firstAttribute="centerY" secondItem="K3W-60-SGH" secondAttribute="centerY" id="rmB-Ky-Mt1"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" identifier="cityCellIdentifier"/>
