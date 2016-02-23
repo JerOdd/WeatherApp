@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5672D531C7BB1AE0094FBCD /* BOWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5672D521C7BB1AE0094FBCD /* BOWeatherManager.swift */; };
+		F5F33DAE1C7C7C3C00C904E9 /* DAODownloadTaskRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DAD1C7C7C3C00C904E9 /* DAODownloadTaskRequest.swift */; };
+		F5F33DB01C7C7C5100C904E9 /* DAODataTaskRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DAF1C7C7C5100C904E9 /* DAODataTaskRequest.swift */; };
+		F5F33DB31C7C7CED00C904E9 /* DAOWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DB21C7C7CED00C904E9 /* DAOWeatherRequest.swift */; };
+		F5F33DB61C7C7D7C00C904E9 /* DAOWeatherImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DB51C7C7D7C00C904E9 /* DAOWeatherImageRequest.swift */; };
+		F5F33DB81C7C7F1100C904E9 /* DAORequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DB71C7C7F1100C904E9 /* DAORequest.swift */; };
+		F5F33DBA1C7C80C400C904E9 /* DAORequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DB91C7C80C400C904E9 /* DAORequestFactory.swift */; };
+		F5F33DBC1C7C825F00C904E9 /* DAODataTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DBB1C7C825F00C904E9 /* DAODataTaskFactory.swift */; };
+		F5F33DBE1C7C957A00C904E9 /* UICitiesDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DBD1C7C957A00C904E9 /* UICitiesDescriptionViewController.swift */; };
 		F5F806EB1C7B2D0A004A4596 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F806EA1C7B2D0A004A4596 /* AppDelegate.swift */; };
 		F5F806F01C7B2D0A004A4596 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F806EE1C7B2D0A004A4596 /* Main.storyboard */; };
 		F5F806F31C7B2D0A004A4596 /* WeatherApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5F806F11C7B2D0A004A4596 /* WeatherApp.xcdatamodeld */; };
@@ -14,12 +23,11 @@
 		F5F806F81C7B2D0A004A4596 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F806F61C7B2D0A004A4596 /* LaunchScreen.storyboard */; };
 		F5F807031C7B2D0A004A4596 /* WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F807021C7B2D0A004A4596 /* WeatherAppTests.swift */; };
 		F5F8070E1C7B2D0A004A4596 /* WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F8070D1C7B2D0A004A4596 /* WeatherAppUITests.swift */; };
-		F5F8072E1C7B67CA004A4596 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F8072D1C7B67CA004A4596 /* City.swift */; };
-		F5F807301C7B699B004A4596 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F8072F1C7B699B004A4596 /* Weather.swift */; };
-		F5F8072C1C7B5217004A4596 /* DAORequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F8072B1C7B5217004A4596 /* DAORequest.swift */; };
 		F5F807261C7B324B004A4596 /* UICitiesSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F807251C7B324B004A4596 /* UICitiesSplitViewController.swift */; };
 		F5F807281C7B334B004A4596 /* UICitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F807271C7B334B004A4596 /* UICitiesTableViewController.swift */; };
 		F5F8072A1C7B37AB004A4596 /* UICitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F807291C7B37AB004A4596 /* UICitiesTableViewCell.swift */; };
+		F5F8072E1C7B67CA004A4596 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F8072D1C7B67CA004A4596 /* City.swift */; };
+		F5F807301C7B699B004A4596 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F8072F1C7B699B004A4596 /* Weather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +48,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F5672D521C7BB1AE0094FBCD /* BOWeatherManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BOWeatherManager.swift; sourceTree = "<group>"; };
+		F5F33DAD1C7C7C3C00C904E9 /* DAODownloadTaskRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAODownloadTaskRequest.swift; sourceTree = "<group>"; };
+		F5F33DAF1C7C7C5100C904E9 /* DAODataTaskRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAODataTaskRequest.swift; sourceTree = "<group>"; };
+		F5F33DB21C7C7CED00C904E9 /* DAOWeatherRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOWeatherRequest.swift; sourceTree = "<group>"; };
+		F5F33DB51C7C7D7C00C904E9 /* DAOWeatherImageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOWeatherImageRequest.swift; sourceTree = "<group>"; };
+		F5F33DB71C7C7F1100C904E9 /* DAORequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAORequest.swift; sourceTree = "<group>"; };
+		F5F33DB91C7C80C400C904E9 /* DAORequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAORequestFactory.swift; sourceTree = "<group>"; };
+		F5F33DBB1C7C825F00C904E9 /* DAODataTaskFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAODataTaskFactory.swift; sourceTree = "<group>"; };
+		F5F33DBD1C7C957A00C904E9 /* UICitiesDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICitiesDescriptionViewController.swift; sourceTree = "<group>"; };
 		F5F806E71C7B2D0A004A4596 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5F806EA1C7B2D0A004A4596 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5F806EF1C7B2D0A004A4596 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,12 +70,11 @@
 		F5F807091C7B2D0A004A4596 /* WeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5F8070D1C7B2D0A004A4596 /* WeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppUITests.swift; sourceTree = "<group>"; };
 		F5F8070F1C7B2D0A004A4596 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F5F8072D1C7B67CA004A4596 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
-		F5F8072F1C7B699B004A4596 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
-		F5F8072B1C7B5217004A4596 /* DAORequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAORequest.swift; sourceTree = "<group>"; };
 		F5F807251C7B324B004A4596 /* UICitiesSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICitiesSplitViewController.swift; sourceTree = "<group>"; };
 		F5F807271C7B334B004A4596 /* UICitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICitiesTableViewController.swift; sourceTree = "<group>"; };
 		F5F807291C7B37AB004A4596 /* UICitiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICitiesTableViewCell.swift; sourceTree = "<group>"; };
+		F5F8072D1C7B67CA004A4596 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		F5F8072F1C7B699B004A4596 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +102,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F5F33DAB1C7C7BA500C904E9 /* DownloadTask */ = {
+			isa = PBXGroup;
+			children = (
+				F5F33DB41C7C7D5C00C904E9 /* Weather */,
+				F5F33DAD1C7C7C3C00C904E9 /* DAODownloadTaskRequest.swift */,
+			);
+			name = DownloadTask;
+			sourceTree = "<group>";
+		};
+		F5F33DAC1C7C7BE700C904E9 /* DataTask */ = {
+			isa = PBXGroup;
+			children = (
+				F5F33DB11C7C7CC400C904E9 /* Weather */,
+				F5F33DAF1C7C7C5100C904E9 /* DAODataTaskRequest.swift */,
+				F5F33DBB1C7C825F00C904E9 /* DAODataTaskFactory.swift */,
+			);
+			name = DataTask;
+			sourceTree = "<group>";
+		};
+		F5F33DB11C7C7CC400C904E9 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				F5F33DB21C7C7CED00C904E9 /* DAOWeatherRequest.swift */,
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
+		F5F33DB41C7C7D5C00C904E9 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				F5F33DB51C7C7D7C00C904E9 /* DAOWeatherImageRequest.swift */,
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
 		F5F806DE1C7B2D0A004A4596 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +207,7 @@
 		F5F8071D1C7B2DF6004A4596 /* 2 - Business */ = {
 			isa = PBXGroup;
 			children = (
+				F5672D521C7BB1AE0094FBCD /* BOWeatherManager.swift */,
 			);
 			name = "2 - Business";
 			sourceTree = "<group>";
@@ -192,7 +244,10 @@
 		F5F807211C7B2E76004A4596 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				F5F8072B1C7B5217004A4596 /* DAORequest.swift */,
+				F5F33DAC1C7C7BE700C904E9 /* DataTask */,
+				F5F33DAB1C7C7BA500C904E9 /* DownloadTask */,
+				F5F33DB71C7C7F1100C904E9 /* DAORequest.swift */,
+				F5F33DB91C7C80C400C904E9 /* DAORequestFactory.swift */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -212,6 +267,7 @@
 				F5F807251C7B324B004A4596 /* UICitiesSplitViewController.swift */,
 				F5F807271C7B334B004A4596 /* UICitiesTableViewController.swift */,
 				F5F807291C7B37AB004A4596 /* UICitiesTableViewCell.swift */,
+				F5F33DBD1C7C957A00C904E9 /* UICitiesDescriptionViewController.swift */,
 			);
 			name = Cities;
 			sourceTree = "<group>";
@@ -354,14 +410,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5F8072C1C7B5217004A4596 /* DAORequest.swift in Sources */,
 				F5F8072A1C7B37AB004A4596 /* UICitiesTableViewCell.swift in Sources */,
 				F5F807261C7B324B004A4596 /* UICitiesSplitViewController.swift in Sources */,
+				F5F33DAE1C7C7C3C00C904E9 /* DAODownloadTaskRequest.swift in Sources */,
+				F5F33DBC1C7C825F00C904E9 /* DAODataTaskFactory.swift in Sources */,
+				F5F33DBE1C7C957A00C904E9 /* UICitiesDescriptionViewController.swift in Sources */,
+				F5F33DB81C7C7F1100C904E9 /* DAORequest.swift in Sources */,
 				F5F806F31C7B2D0A004A4596 /* WeatherApp.xcdatamodeld in Sources */,
 				F5F8072E1C7B67CA004A4596 /* City.swift in Sources */,
 				F5F807281C7B334B004A4596 /* UICitiesTableViewController.swift in Sources */,
+				F5672D531C7BB1AE0094FBCD /* BOWeatherManager.swift in Sources */,
+				F5F33DB61C7C7D7C00C904E9 /* DAOWeatherImageRequest.swift in Sources */,
 				F5F806EB1C7B2D0A004A4596 /* AppDelegate.swift in Sources */,
+				F5F33DB01C7C7C5100C904E9 /* DAODataTaskRequest.swift in Sources */,
+				F5F33DBA1C7C80C400C904E9 /* DAORequestFactory.swift in Sources */,
 				F5F807301C7B699B004A4596 /* Weather.swift in Sources */,
+				F5F33DB31C7C7CED00C904E9 /* DAOWeatherRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

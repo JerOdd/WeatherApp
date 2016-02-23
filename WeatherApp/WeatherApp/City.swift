@@ -6,7 +6,10 @@
 //  Copyright © 2016 Jeremy ODDOS. All rights reserved.
 //
 
-import UIKit
+import Foundation
+
+let idKey : String = "id"
+let nameKey : String = "name"
 
 class City: NSObject
 {
@@ -14,10 +17,10 @@ class City: NSObject
     var id : Int
     var weather : Weather
     
-    init(withName name:String, Id id:Int, andWeather weather: Weather)
+    init(withDictionary dictionary : Dictionary<String, AnyObject>)
     {
-        self.name = name
-        self.id = id
-        self.weather = weather
+        self.name = dictionary[nameKey] as! NSString
+        self.id = dictionary[idKey] as! Int
+        self.weather = Weather(withDictionary: dictionary)
     }
 }

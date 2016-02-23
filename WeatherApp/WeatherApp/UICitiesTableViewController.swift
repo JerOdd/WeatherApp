@@ -8,17 +8,15 @@
 
 import UIKit
 
-class UICitiesTableViewController: UITableViewController
+class UICitiesTableViewController: UITableViewController, BOWeatherManagerDelegate
 {
+    var weathersImages : Array<UIImage> = Array<UIImage>()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        BOWeatherManager.sharedManager.delegate = self
     }
 
     override func didReceiveMemoryWarning()
@@ -31,15 +29,48 @@ class UICitiesTableViewController: UITableViewController
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 2
+        return BOWeatherManager.sharedManager.cities.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cityCellIdentifier", forIndexPath: indexPath)
+        let cell : UICitiesTableViewCell = tableView.dequeueReusableCellWithIdentifier("cityCellIdentifier", forIndexPath: indexPath) as! UICitiesTableViewCell
 
-        // Configure the cell...
+        let city : City = BOWeatherManager.sharedManager.cities[indexPath.row]
+        
+        cell.cityNameLabel.text = city.name as String
+        cell.cityTemperatureLabel.text = String(city.weather.temp)
+        
+        //TODO
+        if indexPath.row <= weathersImages.count - 1
+        {
+            cell.weatherImageView.image = weathersImages[indexPath.row]
+        }
 
         return cell
+    }
+    
+    // MARK: - Table view delegate
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        let appDelegate : AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let city : City = BOWeatherManager.sharedManager.cities[indexPath.row]
+        appDelegate.citiesDescriptionViewController?.reloadDisplayWithWeather(city.weather, andWeatherImage: weathersImages[indexPath.row])
+        splitViewController?.showDetailViewController(appDelegate.citiesDescriptionViewController!, sender: nil)
+    }
+    
+    // MARK: - BOWeatherManagerDelegate
+    
+    func didReceiveWeather(weather: Weather, forCity city: City)
+    {
+        tableView.reloadData()
+    }
+    
+    func didReceiveWeatherImageData(data: NSData)
+    {
+        let weatherImage : UIImage = UIImage(data: data)!
+        weathersImages.append(weatherImage)
+        tableView.reloadData()
     }
 }

@@ -13,10 +13,19 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var citiesSplitViewController : UICitiesSplitViewController?
+    var citiesTableViewController : UICitiesTableViewController?
+    var citiesDescriptionViewController : UICitiesDescriptionViewController?
 
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    {
+        let tabBarController = window?.rootViewController as? UITabBarController
+        citiesSplitViewController = tabBarController?.viewControllers?.first as? UICitiesSplitViewController
+        let leftNavigationController = citiesSplitViewController!.viewControllers.first as? UINavigationController
+        citiesTableViewController = leftNavigationController!.topViewController as? UICitiesTableViewController
+        citiesDescriptionViewController = citiesSplitViewController!.viewControllers.last as? UICitiesDescriptionViewController
+        BOWeatherManager.sharedManager.reloadCitiesAndWeathers()
+        
         return true
     }
 
