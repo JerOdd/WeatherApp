@@ -8,21 +8,14 @@
 
 import UIKit
 
-class UIFavoritesTableViewController: UITableViewController {
-
-    override func viewDidLoad() {
+class UIFavoritesTableViewController: UITableViewController
+{
+    
+    // MARK: - View lifecycle
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -31,21 +24,13 @@ class UIFavoritesTableViewController: UITableViewController {
     {
         let numberOfRows = BOCityManager.sharedManager.favorites!.count
         
-        if numberOfRows == 0
+        if numberOfRows == 0 // Display a "No favorites yet" message
         {
-            let noDataLabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-            noDataLabel.text = "No favorites yet."
-            noDataLabel.textColor = UIColor.blackColor()
-            noDataLabel.textAlignment = NSTextAlignment.Center
-            noDataLabel.sizeToFit()
-            
-            tableView.backgroundView = noDataLabel
-            tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+            showNoFavoriteMessage()
         }
-        else
+        else // Hide the message
         {
-            tableView.backgroundView = nil
-            tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+            hideNoFavoriteMessage()
         }
         
         return numberOfRows
@@ -59,47 +44,50 @@ class UIFavoritesTableViewController: UITableViewController {
 
         return cell
     }
+    
+    // MARK: - Table view delegate
 
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
         // Return false if you do not want the specified item to be editable.
         return true
     }
 
-    // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
     {
         if editingStyle == .Delete
         {
+            // Delete the city from the favorites list
             BOCityManager.sharedManager.removeCity(BOCityManager.sharedManager.favorites![indexPath.row])
             // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    // MARK: - No favorites message
+    
+    /**
+     * Display A no favorite message when the list of favorites is empty
+     */
+    private func showNoFavoriteMessage()
+    {
+        // Creation of the label
+        let noDataLabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+        noDataLabel.text = "No favorites yet."
+        noDataLabel.textColor = UIColor.blackColor()
+        noDataLabel.textAlignment = NSTextAlignment.Center
+        noDataLabel.sizeToFit()
+        
+        tableView.backgroundView = noDataLabel
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    /**
+     * Hide the no favorite message
+     */
+    private func hideNoFavoriteMessage()
+    {
+        tableView.backgroundView = nil
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
