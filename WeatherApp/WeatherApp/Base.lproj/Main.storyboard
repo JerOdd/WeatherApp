@@ -31,30 +31,45 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeH-L3-1Uk">
-                                <rect key="frame" x="238.5" y="516" width="123" height="30"/>
-                                <state key="normal" title="Add To Favourites"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeH-L3-1Uk">
+                                <rect key="frame" x="238" y="516" width="123" height="30"/>
+                                <state key="normal" title="Add To Favorites"/>
+                                <connections>
+                                    <action selector="onAddToFavoritesTouched:" destination="vgy-lK-lPY" eventType="touchUpInside" id="jfW-vt-7L3"/>
+                                </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a city" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJh-B3-xtL">
+                                <rect key="frame" x="20" y="0.0" width="560" height="551"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="p0v-r2-Mo2" firstAttribute="top" secondItem="Buj-Rz-Pt5" secondAttribute="bottom" constant="15" id="17R-3L-OgK"/>
+                            <constraint firstItem="pJh-B3-xtL" firstAttribute="top" secondItem="SbO-tL-TsP" secondAttribute="topMargin" id="UBW-n4-BV2"/>
                             <constraint firstItem="p0v-r2-Mo2" firstAttribute="centerX" secondItem="Wpp-Rh-Q3H" secondAttribute="centerX" id="ZvJ-XR-v2D"/>
                             <constraint firstItem="Wpp-Rh-Q3H" firstAttribute="top" secondItem="p0v-r2-Mo2" secondAttribute="bottom" constant="45" id="dy7-8M-Ztd"/>
                             <constraint firstItem="Wpp-Rh-Q3H" firstAttribute="centerX" secondItem="SbO-tL-TsP" secondAttribute="centerX" id="gvb-oQ-qbi"/>
+                            <constraint firstItem="x3o-56-LeD" firstAttribute="top" secondItem="pJh-B3-xtL" secondAttribute="bottom" id="j9h-og-ox0"/>
                             <constraint firstItem="p0v-r2-Mo2" firstAttribute="centerX" secondItem="SbO-tL-TsP" secondAttribute="centerX" id="l1D-J1-twz"/>
+                            <constraint firstItem="pJh-B3-xtL" firstAttribute="leading" secondItem="SbO-tL-TsP" secondAttribute="leadingMargin" id="olK-Wq-jce"/>
                             <constraint firstItem="ZeH-L3-1Uk" firstAttribute="centerX" secondItem="SbO-tL-TsP" secondAttribute="centerX" id="rSo-uA-4yj"/>
                             <constraint firstItem="x3o-56-LeD" firstAttribute="top" secondItem="ZeH-L3-1Uk" secondAttribute="bottom" constant="5" id="v1k-dt-9Bu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pJh-B3-xtL" secondAttribute="trailing" id="ziN-D7-Hoq"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addToFavoriteButton" destination="ZeH-L3-1Uk" id="9i8-2H-XNr"/>
+                        <outlet property="selectACityLabel" destination="pJh-B3-xtL" id="f3M-t1-kWK"/>
                         <outlet property="weatherDescriptionLabel" destination="Wpp-Rh-Q3H" id="TPw-qH-i0F"/>
                         <outlet property="weatherImageView" destination="p0v-r2-Mo2" id="nJT-UT-2ap"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IFd-zk-cl1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1354" y="439"/>
+            <point key="canvasLocation" x="2166" y="439"/>
         </scene>
         <!--Choose the city-->
         <scene sceneID="d2u-ya-kKM">
@@ -63,7 +78,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="sYG-ME-QnZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityCellIdentifier" id="kNy-6l-Afk" userLabel="CitiesCell" customClass="UICitiesTableViewCell" customModule="WeatherApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
@@ -115,6 +130,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Choose the city" id="ejN-cM-prm"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="KbS-Ck-HQR">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="onValueChanged:" destination="2QE-rU-45n" eventType="valueChanged" id="cGk-ky-byo"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nnu-pu-Erx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -150,24 +171,34 @@
             </objects>
             <point key="canvasLocation" x="597" y="67"/>
         </scene>
-        <!--Favourites-->
-        <scene sceneID="d1f-cA-VBR">
+        <!--Favorites-->
+        <scene sceneID="vjx-9d-0Gl">
             <objects>
-                <viewController id="FTC-BI-8Ld" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="KG8-fP-DiJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="YSX-tJ-URz"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ReJ-bX-eBV">
+                <tableViewController id="qsJ-kU-9fO" customClass="UIFavoritesTableViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Oe5-0w-3bM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Favourites" id="1B6-2h-pQO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VK5-sS-Pzx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoriteCell" id="cZ8-RY-KPa">
+                                <rect key="frame" x="0.0" y="49.5" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cZ8-RY-KPa" id="6KI-XN-7M6">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qsJ-kU-9fO" id="924-Lm-FdE"/>
+                            <outlet property="delegate" destination="qsJ-kU-9fO" id="67h-uL-50B"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Favorites" id="9Ze-U4-D91"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ScD-cC-J2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="597" y="862"/>
+            <point key="canvasLocation" x="597" y="778"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cWz-X3-Nva">
@@ -180,7 +211,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="dvm-TJ-mqY" kind="relationship" relationship="viewControllers" id="JpD-1X-L2h"/>
-                        <segue destination="FTC-BI-8Ld" kind="relationship" relationship="viewControllers" id="kMa-gh-4Q7"/>
+                        <segue destination="qsJ-kU-9fO" kind="relationship" relationship="viewControllers" id="rfQ-P9-E3y"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2av-09-RGC" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -26,7 +26,7 @@ class DAOWeatherRequest: DAODataTaskRequest
             let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
             print(json)
             let city : City = City(withDictionary: json as! Dictionary<String, AnyObject>)
-            delegate?.didReceiveWeather(city.weather, forCity: city)
+            delegate?.didReceiveWeather(city.weather!, forCity: city)
         }
         catch (let exception)
         {

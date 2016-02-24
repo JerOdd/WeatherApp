@@ -29,7 +29,26 @@ class UICitiesTableViewController: UITableViewController, BOWeatherManagerDelega
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return BOWeatherManager.sharedManager.cities.count
+        let numberOfRows = BOWeatherManager.sharedManager.cities.count
+        
+        if numberOfRows == 0
+        {
+            let noDataLabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            noDataLabel.text = "No Data. Please Pull to Refresh"
+            noDataLabel.textColor = UIColor.blackColor()
+            noDataLabel.textAlignment = NSTextAlignment.Center
+            noDataLabel.sizeToFit()
+            
+            tableView.backgroundView = noDataLabel
+            tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        }
+        else
+        {
+            tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+            tableView.backgroundView = nil
+        }
+        
+        return numberOfRows
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
@@ -38,8 +57,8 @@ class UICitiesTableViewController: UITableViewController, BOWeatherManagerDelega
 
         let city : City = BOWeatherManager.sharedManager.cities[indexPath.row]
         
-        cell.cityNameLabel.text = city.name as String
-        cell.cityTemperatureLabel.text = "\(String(city.weather.temp))  °F"
+        cell.cityNameLabel.text = city.name as? String
+        cell.cityTemperatureLabel.text = "\(String(city.weather!.temp))°F"
         
         //TODO
         if indexPath.row <= weathersImages.count - 1
@@ -61,8 +80,13 @@ class UICitiesTableViewController: UITableViewController, BOWeatherManagerDelega
     {
         let appDelegate : AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let city : City = BOWeatherManager.sharedManager.cities[indexPath.row]
-        appDelegate.citiesDescriptionViewController?.reloadDisplayWithWeather(city.weather, andWeatherImage: weathersImages[indexPath.row])
+        appDelegate.citiesDescriptionViewController?.reloadDisplayWithCity(city, andWeatherImage: weathersImages[indexPath.row])
         splitViewController?.showDetailViewController(appDelegate.citiesDescriptionViewController!, sender: nil)
+    }
+    
+    @IBAction func onValueChanged(sender: UIRefreshControl)
+    {
+        BOWeatherManager.sharedManager.reloadCitiesAndWeathers()
     }
     
     // MARK: - BOWeatherManagerDelegate
@@ -77,5 +101,10 @@ class UICitiesTableViewController: UITableViewController, BOWeatherManagerDelega
         let weatherImage : UIImage = UIImage(data: data)!
         weathersImages.append(weatherImage)
         tableView.reloadData()
+        
+        if (self.refreshControl != nil)
+        {
+            self.refreshControl?.endRefreshing()
+        }
     }
 }

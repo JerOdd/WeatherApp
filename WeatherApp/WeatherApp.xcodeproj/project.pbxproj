@@ -16,6 +16,10 @@
 		F5F33DBA1C7C80C400C904E9 /* DAORequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DB91C7C80C400C904E9 /* DAORequestFactory.swift */; };
 		F5F33DBC1C7C825F00C904E9 /* DAODataTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DBB1C7C825F00C904E9 /* DAODataTaskFactory.swift */; };
 		F5F33DBE1C7C957A00C904E9 /* UICitiesDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DBD1C7C957A00C904E9 /* UICitiesDescriptionViewController.swift */; };
+		F5F33DC01C7CB86E00C904E9 /* DAOStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DBF1C7CB86E00C904E9 /* DAOStorage.swift */; };
+		F5F33DCD1C7CBB0D00C904E9 /* DAOCitiesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DCC1C7CBB0D00C904E9 /* DAOCitiesStorage.swift */; };
+		F5F33DCF1C7CBE2200C904E9 /* BOCityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DCE1C7CBE2200C904E9 /* BOCityManager.swift */; };
+		F5F33DD11C7CC65E00C904E9 /* UIFavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DD01C7CC65E00C904E9 /* UIFavoritesTableViewController.swift */; };
 		F5F806EB1C7B2D0A004A4596 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F806EA1C7B2D0A004A4596 /* AppDelegate.swift */; };
 		F5F806F01C7B2D0A004A4596 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F806EE1C7B2D0A004A4596 /* Main.storyboard */; };
 		F5F806F31C7B2D0A004A4596 /* WeatherApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5F806F11C7B2D0A004A4596 /* WeatherApp.xcdatamodeld */; };
@@ -57,6 +61,10 @@
 		F5F33DB91C7C80C400C904E9 /* DAORequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAORequestFactory.swift; sourceTree = "<group>"; };
 		F5F33DBB1C7C825F00C904E9 /* DAODataTaskFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAODataTaskFactory.swift; sourceTree = "<group>"; };
 		F5F33DBD1C7C957A00C904E9 /* UICitiesDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICitiesDescriptionViewController.swift; sourceTree = "<group>"; };
+		F5F33DBF1C7CB86E00C904E9 /* DAOStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOStorage.swift; sourceTree = "<group>"; };
+		F5F33DCC1C7CBB0D00C904E9 /* DAOCitiesStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOCitiesStorage.swift; sourceTree = "<group>"; };
+		F5F33DCE1C7CBE2200C904E9 /* BOCityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BOCityManager.swift; sourceTree = "<group>"; };
+		F5F33DD01C7CC65E00C904E9 /* UIFavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFavoritesTableViewController.swift; sourceTree = "<group>"; };
 		F5F806E71C7B2D0A004A4596 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5F806EA1C7B2D0A004A4596 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5F806EF1C7B2D0A004A4596 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,6 +145,14 @@
 			name = Weather;
 			sourceTree = "<group>";
 		};
+		F5F33DCB1C7CBAEB00C904E9 /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				F5F33DCC1C7CBB0D00C904E9 /* DAOCitiesStorage.swift */,
+			);
+			name = Cities;
+			sourceTree = "<group>";
+		};
 		F5F806DE1C7B2D0A004A4596 = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				F5672D521C7BB1AE0094FBCD /* BOWeatherManager.swift */,
+				F5F33DCE1C7CBE2200C904E9 /* BOCityManager.swift */,
 			);
 			name = "2 - Business";
 			sourceTree = "<group>";
@@ -236,7 +253,9 @@
 		F5F807201C7B2E6A004A4596 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				F5F33DCB1C7CBAEB00C904E9 /* Cities */,
 				F5F806F11C7B2D0A004A4596 /* WeatherApp.xcdatamodeld */,
+				F5F33DBF1C7CB86E00C904E9 /* DAOStorage.swift */,
 			);
 			name = Storage;
 			sourceTree = "<group>";
@@ -275,6 +294,7 @@
 		F5F807241C7B3186004A4596 /* Favourites */ = {
 			isa = PBXGroup;
 			children = (
+				F5F33DD01C7CC65E00C904E9 /* UIFavoritesTableViewController.swift */,
 			);
 			name = Favourites;
 			sourceTree = "<group>";
@@ -417,7 +437,10 @@
 				F5F33DBE1C7C957A00C904E9 /* UICitiesDescriptionViewController.swift in Sources */,
 				F5F33DB81C7C7F1100C904E9 /* DAORequest.swift in Sources */,
 				F5F806F31C7B2D0A004A4596 /* WeatherApp.xcdatamodeld in Sources */,
+				F5F33DC01C7CB86E00C904E9 /* DAOStorage.swift in Sources */,
 				F5F8072E1C7B67CA004A4596 /* City.swift in Sources */,
+				F5F33DCD1C7CBB0D00C904E9 /* DAOCitiesStorage.swift in Sources */,
+				F5F33DCF1C7CBE2200C904E9 /* BOCityManager.swift in Sources */,
 				F5F807281C7B334B004A4596 /* UICitiesTableViewController.swift in Sources */,
 				F5672D531C7BB1AE0094FBCD /* BOWeatherManager.swift in Sources */,
 				F5F33DB61C7C7D7C00C904E9 /* DAOWeatherImageRequest.swift in Sources */,
@@ -426,6 +449,7 @@
 				F5F33DBA1C7C80C400C904E9 /* DAORequestFactory.swift in Sources */,
 				F5F807301C7B699B004A4596 /* Weather.swift in Sources */,
 				F5F33DB31C7C7CED00C904E9 /* DAOWeatherRequest.swift in Sources */,
+				F5F33DD11C7CC65E00C904E9 /* UIFavoritesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,10 +591,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jerodd.ios.WeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -578,6 +604,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jerodd.ios.WeatherApp;

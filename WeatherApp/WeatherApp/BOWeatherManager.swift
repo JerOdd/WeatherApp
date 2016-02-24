@@ -24,6 +24,8 @@ class BOWeatherManager: NSObject, DAOWeatherRequestDelegate, DAOWeatherImageRequ
     
     func reloadCitiesAndWeathers()
     {
+        cities.removeAll()
+        weathers.removeAll()
         let request : DAOWeatherRequest = DAOWeatherRequest()
         request.delegate = self
         request.send()

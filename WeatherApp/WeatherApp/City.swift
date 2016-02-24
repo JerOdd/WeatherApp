@@ -13,14 +13,19 @@ let nameKey : String = "name"
 
 class City: NSObject
 {
-    var name : NSString
-    var id : Int
-    var weather : Weather
+    var name : NSString?
+    var id : Int?
+    var weather : Weather?
+    
+    override init()
+    {
+        
+    }
     
     init(withDictionary dictionary : Dictionary<String, AnyObject>)
     {
-        self.name = dictionary[nameKey] as! NSString
-        self.id = dictionary[idKey] as! Int
+        self.name = dictionary[nameKey] as? NSString
+        self.id = dictionary[idKey] as? Int
         self.weather = Weather(withDictionary: dictionary)
     }
 }
