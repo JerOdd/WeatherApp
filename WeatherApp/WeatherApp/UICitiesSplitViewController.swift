@@ -26,6 +26,7 @@ class UICitiesSplitViewController: UISplitViewController, UISplitViewControllerD
     
     func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool
     {
+        // Always display the list of cities, if false it displays the description...
         return true
     }
 }
