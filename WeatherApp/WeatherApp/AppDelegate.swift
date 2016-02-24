@@ -13,14 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 {
 
     var window: UIWindow?
-    var mainTabBarViewController : UITabBarController?
-    var citiesSplitViewController : UICitiesSplitViewController?
-    var citiesTableViewController : UICitiesTableViewController?
-    var citiesDescriptionViewController : UICitiesDescriptionViewController?
-    var favoritesTableViewController : UIFavoritesTableViewController?
+    var mainTabBarViewController : UITabBarController? // The main tab bar controller
+    var citiesSplitViewController : UICitiesSplitViewController? // The split view controller
+    var citiesTableViewController : UICitiesTableViewController? // The cities table view controller
+    var citiesDescriptionViewController : UICitiesDescriptionViewController? // The city weather description controller
+    var favoritesTableViewController : UIFavoritesTableViewController? // The favorites table view controller
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
+        // Get all the instances of viewControllers set in Main.storyboard
         mainTabBarViewController = window?.rootViewController as? UITabBarController
         citiesSplitViewController = mainTabBarViewController?.viewControllers?.first as? UICitiesSplitViewController
         let leftNavigationController = citiesSplitViewController!.viewControllers.first as? UINavigationController
@@ -28,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         citiesDescriptionViewController = citiesSplitViewController!.viewControllers.last as? UICitiesDescriptionViewController
         favoritesTableViewController = mainTabBarViewController?.viewControllers?.last as? UIFavoritesTableViewController
         
+        // Initialization of all cities saved in the favourites
         BOCityManager.sharedManager.getAllSavedCities()
         
         return true
@@ -59,7 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        //self.saveContext()
     }
 }
 
