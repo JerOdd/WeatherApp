@@ -2,40 +2,82 @@
 //  DAOWeatherRequest.swift
 //  WeatherApp
 //
-//  Created by Cyrielle Gandon on 23/02/2016.
-//  Copyright © 2016 Jeremy ODDOS. All rights reserved.
+//  Copyright © 2016 JerOdd. All rights reserved.
 //
 
 import Foundation
 
 protocol DAOWeatherRequestDelegate: class
 {
-    func didReceiveWeather(weather: Weather, forCity city: City)
+    /**
+     * Succeeded to retrieve information for the city
+     * - Parameter city: the information for the city
+     */
+    func didReceiveWeatherInformationForCity(city: City)
+    
+    /**
+     * Failed to retrieve information for the city
+     * - Parameter city: The city sent in the request
+     */
+    func didFailToReceiveWeatherInformationForCity(city: City)
 }
 
-class DAOWeatherRequest: DAODataTaskRequest
+class DAOWeatherRequest
 {
     weak var delegate: DAOWeatherRequestDelegate?
-    var httpMethod : String = "GET"
-    var urlString : String = "http://api.openweathermap.org/data/2.5/weather?id=2172797&APPID=b83c13b2ab60f7ec52b12d6fcf3f9f42"
     
-    func didReceiveData(data: NSData)
+    /**
+     * Download the weather information for a city
+     * - Parameter city: The city
+     */
+    func downloadWeatherInformationForCity(city: City)
     {
-        do
-        {
-            let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
-            print(json)
-            let city : City = City(withDictionary: json as! Dictionary<String, AnyObject>)
-            delegate?.didReceiveWeather(city.weather!, forCity: city)
+        let url : NSURL = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?id=\(city.id!)&APPID=18ec4a3d8f396825d6f19c4b52d186c5")! // URL of the request
+        let session : NSURLSession = NSURLSession.sharedSession()
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "GET"
+        let task = session.dataTaskWithRequest(request)
+            {
+                (let data : NSData?, let response : NSURLResponse?, let error: NSError?) -> Void in
+                if (error != nil)
+                {
+                    print(error)
+                    
+                    // We need to perform this code on the main thread
+                    dispatch_async(dispatch_get_main_queue(),
+                    {
+                        self.delegate?.didFailToReceiveWeatherInformationForCity(city) // Haven't received any information
+                    })
+                }
+                else
+                {
+                    do
+                    {
+                        // Parse the json into dictionary
+                        let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+                        
+                        // Init a city with the dictionary
+                        let city : City = City(withDictionary: json as! Dictionary<String, AnyObject>)
+                        
+                        // We need to perform this code on the main thread
+                        dispatch_async(dispatch_get_main_queue(),
+                        {
+                            // Notify the delegate with the city
+                            self.delegate?.didReceiveWeatherInformationForCity(city)
+                        })
+                    }
+                    catch (let exception as NSError)
+                    {
+                        print(exception)
+                        
+                        // We need to perform this code on the main thread
+                        dispatch_async(dispatch_get_main_queue(),
+                        {
+                            self.delegate?.didFailToReceiveWeatherInformationForCity(city) // Haven't received any information
+                        })
+                    }
+                }
         }
-        catch (let exception)
-        {
-            print(exception)
-        }
-    }
-    
-    func didReceiveError(error: NSError)
-    {
-        
+        task.resume()
     }
 }

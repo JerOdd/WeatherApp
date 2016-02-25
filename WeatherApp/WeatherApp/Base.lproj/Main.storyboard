@@ -31,8 +31,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeH-L3-1Uk">
-                                <rect key="frame" x="238" y="516" width="123" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeH-L3-1Uk">
+                                <rect key="frame" x="242" y="516" width="115" height="30"/>
                                 <state key="normal" title="Add To Favorites"/>
                                 <connections>
                                     <action selector="onAddToFavoritesTouched:" destination="vgy-lK-lPY" eventType="touchUpInside" id="jfW-vt-7L3"/>
@@ -130,8 +130,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Choose the city" id="ejN-cM-prm"/>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="KbS-Ck-HQR">
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="top" id="KbS-Ck-HQR">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
                             <action selector="onValueChanged:" destination="2QE-rU-45n" eventType="valueChanged" id="cGk-ky-byo"/>
                         </connections>

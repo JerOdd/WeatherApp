@@ -2,34 +2,36 @@
 //  Weather.swift
 //  WeatherApp
 //
-//  Created by Cyrielle Gandon on 22/02/2016.
-//  Copyright © 2016 Jeremy ODDOS. All rights reserved.
+//  Copyright © 2016 JerOdd. All rights reserved.
 //
 
 import Foundation
 
-let mainKey : String = "main"
-let temperatureMainKey : String = "temp"
+let mainKey : String = "main" // The main key in json provided by the API
+let temperatureMainKey : String = "temp" // The temperature key in json provided by the API
 
-let weatherKey : String = "weather"
-let idWeatherKey : String = "id"
-let mainWeatherKey : String = "main"
-let descriptionWeatherKey : String = "description"
-let iconWeatherKey : String = "icon"
+let weatherKey : String = "weather" // The weather key in json provided by the API
+let idWeatherKey : String = "id" // The id key in json provided by the API
+let mainWeatherKey : String = "main" // The main key in json provided by the API
+let descriptionWeatherKey : String = "description" // The description key in json provided by the API
+let iconWeatherKey : String = "icon" // The icon key in json provided by the API
 
 class Weather: NSObject
 {
-    var id : Int = 0
-    var temp : Float = 0.0
-    var desc : String = ""
-    var iconName : String = ""
-    var main : String = ""
+    var id : Int = 0 // id of the city
+    var temp : Float = 0.0 // temperature of the city
+    var desc : String = "" // small description of the weather
+    var iconName : String = "" // icon name of the weather
+    var main : String = "" // main weather
     
     override init()
     {
         
     }
     
+    /**
+     * Init a Weather object with a dictionary
+     */
     init(withDictionary dictionary : Dictionary<String,AnyObject>)
     {
         let mainDictionary : Dictionary<String,AnyObject> = dictionary[mainKey] as! Dictionary<String,AnyObject>

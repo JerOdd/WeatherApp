@@ -2,13 +2,12 @@
 //  UIFavoritesTableViewController.swift
 //  WeatherApp
 //
-//  Created by Cyrielle Gandon on 23/02/2016.
-//  Copyright © 2016 Jeremy ODDOS. All rights reserved.
+//  Copyright © 2016 JerOdd. All rights reserved.
 //
 
 import UIKit
 
-class UIFavoritesTableViewController: UITableViewController
+class UIFavoritesTableViewController: UITableViewController, BOCityManagerDelegate
 {
     
     // MARK: - View lifecycle
@@ -16,6 +15,8 @@ class UIFavoritesTableViewController: UITableViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        BOCityManager.sharedManager.delegate = self
     }
 
     // MARK: - Table view data source
@@ -49,7 +50,6 @@ class UIFavoritesTableViewController: UITableViewController
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
     {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
 
@@ -61,9 +61,22 @@ class UIFavoritesTableViewController: UITableViewController
             BOCityManager.sharedManager.removeCity(BOCityManager.sharedManager.favorites![indexPath.row])
             // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            // Refresh the badge value
+            refreshBadgeValue()
         }
     }
+    
+    // MARK: - BOCityManagerDelegate
 
+    /**
+     * Called when a city has been saved to the favorites
+     */
+    func didSaveCity(city: City)
+    {
+        tableView.reloadData() // Reload the tableView
+        refreshBadgeValue() // Refresh the badge value
+    }
+    
     // MARK: - No favorites message
     
     /**
@@ -89,5 +102,24 @@ class UIFavoritesTableViewController: UITableViewController
     {
         tableView.backgroundView = nil
         tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+    }
+    
+    // MARK : - Refresh badge value
+    
+    /**
+     * Display or hide the badge value
+     */
+    private func refreshBadgeValue()
+    {
+        let numberInBadge = BOCityManager.sharedManager.favorites!.count
+        
+        if numberInBadge > 0 // Show the badge value with the correct number of favorites
+        {
+            tabBarItem.badgeValue = "\(numberInBadge)"
+        }
+        else // Hide the badge value
+        {
+            tabBarItem.badgeValue = nil
+        }
     }
 }

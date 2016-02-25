@@ -2,8 +2,7 @@
 //  UICitiesSplitViewController.swift
 //  WeatherApp
 //
-//  Created by Cyrielle Gandon on 22/02/2016.
-//  Copyright © 2016 Jeremy ODDOS. All rights reserved.
+//  Copyright © 2016 JerOdd. All rights reserved.
 //
 
 import UIKit

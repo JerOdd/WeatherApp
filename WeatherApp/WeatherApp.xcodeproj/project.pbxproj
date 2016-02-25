@@ -8,13 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F5672D531C7BB1AE0094FBCD /* BOWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5672D521C7BB1AE0094FBCD /* BOWeatherManager.swift */; };
-		F5F33DAE1C7C7C3C00C904E9 /* DAODownloadTaskRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DAD1C7C7C3C00C904E9 /* DAODownloadTaskRequest.swift */; };
-		F5F33DB01C7C7C5100C904E9 /* DAODataTaskRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DAF1C7C7C5100C904E9 /* DAODataTaskRequest.swift */; };
 		F5F33DB31C7C7CED00C904E9 /* DAOWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DB21C7C7CED00C904E9 /* DAOWeatherRequest.swift */; };
 		F5F33DB61C7C7D7C00C904E9 /* DAOWeatherImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DB51C7C7D7C00C904E9 /* DAOWeatherImageRequest.swift */; };
-		F5F33DB81C7C7F1100C904E9 /* DAORequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DB71C7C7F1100C904E9 /* DAORequest.swift */; };
-		F5F33DBA1C7C80C400C904E9 /* DAORequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DB91C7C80C400C904E9 /* DAORequestFactory.swift */; };
-		F5F33DBC1C7C825F00C904E9 /* DAODataTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DBB1C7C825F00C904E9 /* DAODataTaskFactory.swift */; };
 		F5F33DBE1C7C957A00C904E9 /* UICitiesDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DBD1C7C957A00C904E9 /* UICitiesDescriptionViewController.swift */; };
 		F5F33DC01C7CB86E00C904E9 /* DAOStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DBF1C7CB86E00C904E9 /* DAOStorage.swift */; };
 		F5F33DCD1C7CBB0D00C904E9 /* DAOCitiesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F33DCC1C7CBB0D00C904E9 /* DAOCitiesStorage.swift */; };
@@ -53,13 +48,8 @@
 
 /* Begin PBXFileReference section */
 		F5672D521C7BB1AE0094FBCD /* BOWeatherManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BOWeatherManager.swift; sourceTree = "<group>"; };
-		F5F33DAD1C7C7C3C00C904E9 /* DAODownloadTaskRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAODownloadTaskRequest.swift; sourceTree = "<group>"; };
-		F5F33DAF1C7C7C5100C904E9 /* DAODataTaskRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAODataTaskRequest.swift; sourceTree = "<group>"; };
 		F5F33DB21C7C7CED00C904E9 /* DAOWeatherRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOWeatherRequest.swift; sourceTree = "<group>"; };
 		F5F33DB51C7C7D7C00C904E9 /* DAOWeatherImageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOWeatherImageRequest.swift; sourceTree = "<group>"; };
-		F5F33DB71C7C7F1100C904E9 /* DAORequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAORequest.swift; sourceTree = "<group>"; };
-		F5F33DB91C7C80C400C904E9 /* DAORequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAORequestFactory.swift; sourceTree = "<group>"; };
-		F5F33DBB1C7C825F00C904E9 /* DAODataTaskFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAODataTaskFactory.swift; sourceTree = "<group>"; };
 		F5F33DBD1C7C957A00C904E9 /* UICitiesDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICitiesDescriptionViewController.swift; sourceTree = "<group>"; };
 		F5F33DBF1C7CB86E00C904E9 /* DAOStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOStorage.swift; sourceTree = "<group>"; };
 		F5F33DCC1C7CBB0D00C904E9 /* DAOCitiesStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOCitiesStorage.swift; sourceTree = "<group>"; };
@@ -110,49 +100,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F5F33DAB1C7C7BA500C904E9 /* DownloadTask */ = {
-			isa = PBXGroup;
-			children = (
-				F5F33DB41C7C7D5C00C904E9 /* Weather */,
-				F5F33DAD1C7C7C3C00C904E9 /* DAODownloadTaskRequest.swift */,
-			);
-			name = DownloadTask;
-			sourceTree = "<group>";
-		};
-		F5F33DAC1C7C7BE700C904E9 /* DataTask */ = {
-			isa = PBXGroup;
-			children = (
-				F5F33DB11C7C7CC400C904E9 /* Weather */,
-				F5F33DAF1C7C7C5100C904E9 /* DAODataTaskRequest.swift */,
-				F5F33DBB1C7C825F00C904E9 /* DAODataTaskFactory.swift */,
-			);
-			name = DataTask;
-			sourceTree = "<group>";
-		};
-		F5F33DB11C7C7CC400C904E9 /* Weather */ = {
-			isa = PBXGroup;
-			children = (
-				F5F33DB21C7C7CED00C904E9 /* DAOWeatherRequest.swift */,
-			);
-			name = Weather;
-			sourceTree = "<group>";
-		};
-		F5F33DB41C7C7D5C00C904E9 /* Weather */ = {
-			isa = PBXGroup;
-			children = (
-				F5F33DB51C7C7D7C00C904E9 /* DAOWeatherImageRequest.swift */,
-			);
-			name = Weather;
-			sourceTree = "<group>";
-		};
-		F5F33DCB1C7CBAEB00C904E9 /* Cities */ = {
-			isa = PBXGroup;
-			children = (
-				F5F33DCC1C7CBB0D00C904E9 /* DAOCitiesStorage.swift */,
-			);
-			name = Cities;
-			sourceTree = "<group>";
-		};
 		F5F806DE1C7B2D0A004A4596 = {
 			isa = PBXGroup;
 			children = (
@@ -253,7 +200,7 @@
 		F5F807201C7B2E6A004A4596 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				F5F33DCB1C7CBAEB00C904E9 /* Cities */,
+				F5F33DCC1C7CBB0D00C904E9 /* DAOCitiesStorage.swift */,
 				F5F806F11C7B2D0A004A4596 /* WeatherApp.xcdatamodeld */,
 				F5F33DBF1C7CB86E00C904E9 /* DAOStorage.swift */,
 			);
@@ -263,10 +210,8 @@
 		F5F807211C7B2E76004A4596 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				F5F33DAC1C7C7BE700C904E9 /* DataTask */,
-				F5F33DAB1C7C7BA500C904E9 /* DownloadTask */,
-				F5F33DB71C7C7F1100C904E9 /* DAORequest.swift */,
-				F5F33DB91C7C80C400C904E9 /* DAORequestFactory.swift */,
+				F5F33DB21C7C7CED00C904E9 /* DAOWeatherRequest.swift */,
+				F5F33DB51C7C7D7C00C904E9 /* DAOWeatherImageRequest.swift */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -363,7 +308,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = "Jeremy ODDOS";
+				ORGANIZATIONNAME = JerOdd;
 				TargetAttributes = {
 					F5F806E61C7B2D0A004A4596 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -432,10 +377,7 @@
 			files = (
 				F5F8072A1C7B37AB004A4596 /* UICitiesTableViewCell.swift in Sources */,
 				F5F807261C7B324B004A4596 /* UICitiesSplitViewController.swift in Sources */,
-				F5F33DAE1C7C7C3C00C904E9 /* DAODownloadTaskRequest.swift in Sources */,
-				F5F33DBC1C7C825F00C904E9 /* DAODataTaskFactory.swift in Sources */,
 				F5F33DBE1C7C957A00C904E9 /* UICitiesDescriptionViewController.swift in Sources */,
-				F5F33DB81C7C7F1100C904E9 /* DAORequest.swift in Sources */,
 				F5F806F31C7B2D0A004A4596 /* WeatherApp.xcdatamodeld in Sources */,
 				F5F33DC01C7CB86E00C904E9 /* DAOStorage.swift in Sources */,
 				F5F8072E1C7B67CA004A4596 /* City.swift in Sources */,
@@ -445,8 +387,6 @@
 				F5672D531C7BB1AE0094FBCD /* BOWeatherManager.swift in Sources */,
 				F5F33DB61C7C7D7C00C904E9 /* DAOWeatherImageRequest.swift in Sources */,
 				F5F806EB1C7B2D0A004A4596 /* AppDelegate.swift in Sources */,
-				F5F33DB01C7C7C5100C904E9 /* DAODataTaskRequest.swift in Sources */,
-				F5F33DBA1C7C80C400C904E9 /* DAORequestFactory.swift in Sources */,
 				F5F807301C7B699B004A4596 /* Weather.swift in Sources */,
 				F5F33DB31C7C7CED00C904E9 /* DAOWeatherRequest.swift in Sources */,
 				F5F33DD11C7CC65E00C904E9 /* UIFavoritesTableViewController.swift in Sources */,

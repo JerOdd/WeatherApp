@@ -2,11 +2,10 @@
 //  DAOStorage.swift
 //  WeatherApp
 //
-//  Created by Cyrielle Gandon on 23/02/2016.
-//  Copyright © 2016 Jeremy ODDOS. All rights reserved.
+//  Copyright © 2016 JerOdd. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 import CoreData
 
@@ -65,7 +64,7 @@ class DAOStorage: NSObject
     
     // MARK: - Core Data Saving support
     
-    func saveContext ()
+    func saveContext()
     {
         if managedObjectContext.hasChanges
         {
